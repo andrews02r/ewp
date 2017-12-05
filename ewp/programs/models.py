@@ -79,7 +79,16 @@ class Course(models.Model):
         blank = True,
         null = True,
     )
-
+    start_date = models.DateField(
+        default = datetime.now,
+    )
+    expiration_date = models.DateField(
+        blank = True,
+        null = True,
+    )
+    active = models.BooleanField(
+        default = True,
+    )    
     def __str__(self):
         """
         String for representing the Model object (in Admin site etc.)

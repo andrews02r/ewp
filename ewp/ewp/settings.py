@@ -25,7 +25,7 @@ SECRET_KEY = 'h895azpy19=j@7ao3&wizg&-_$d9#qqv+5*vrv_243$y==6ca_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0','mpsd-ra5719-osx.dev.att.com']
 
 
 # Application definition

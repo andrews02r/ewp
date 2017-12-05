@@ -10,7 +10,6 @@ class TimeFrameFilter(admin.SimpleListFilter):
     # https://docs.djangoproject.com/en/2.0/ref/contrib/admin/
     pass
 
-
 @admin.register(Stream)
 class StreamAdmin(admin.ModelAdmin):
     list_display = ['label', 'stream_type', 'acl']
@@ -29,14 +28,20 @@ class ScheduledProgramAdmin(admin.ModelAdmin):
     list_filter = ('channel','start_date',)
     search_fields = ['program__name', 'program__abbreviation']
 
+@admin.register(Course)
+class CourseAdmin(admin.ModelAdmin):
+    list_display = ['name','abbreviation','number',]
+    ordering = ['number','name','abbreviation',]
+    search_fields = ['name','abbreviation','number',]
+    list_filter = ('active',)
 
 admin.site.register(Language)
 admin.site.register(StreamTokenType)
 admin.site.register(StreamType)
 admin.site.register(Channel)
 admin.site.register(Program)
-admin.site.register(Course)
 
+#admin.site.register(Course)
 #admin.site.register(Person)
 #admin.site.register(Group)
 #admin.site.register(Membership)
